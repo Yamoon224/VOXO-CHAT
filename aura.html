@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site avec ChatBot</title>
+</head>
+
+<body>
+    <h1>Mon Site Web</h1>
+    <p>Contenu de votre site...</p>
+
+    <!-- Widget ChatBot - À placer avant </body> -->
+    <script>
+        window.ChatBotConfig = {
+            tenantId: 'fe7d981a-0539-4bea-80d1-157c2ba962b2',
+            apiUrl: 'http://localhost:3001/api',
+            name: 'Assistant Aura',
+            welcomeMessage: "Bonjour ! Je suis l'assistant virtuel de Aura. Comment puis-je vous aider ?",
+            theme: {
+                primaryColor: '#3b82f6',
+                textColor: '#333333',
+                position: 'bottom-right'
+            },
+            options: {
+                autoOpen: false,
+                showPoweredBy: true,
+                enableSounds: true,
+                enableTyping: true
+            }
+        };
+    </script>
+    <script src="http://localhost:3001/widget.js" async></script>
+</body>
+
+</html>

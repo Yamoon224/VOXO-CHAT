@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site avec ChatBot</title>
+</head>
+<body>
+    <h1>Mon Site Web</h1>
+    <p>Contenu de votre site...</p>
+    
+    <!-- Widget ChatBot - À placer avant </body> -->
+    <script>
+      window.ChatBotConfig = {
+        tenantId: 'e69a5029-e327-4916-94f0-1d57b3e7129f',
+        apiUrl: 'http://localhost:3001/api',
+        name: 'Assistant Test',
+        welcomeMessage: "Bonjour ! Je suis l'assistant virtuel de Test. Comment puis-je vous aider ?",
+        theme: {
+          primaryColor: '#3b82f6',
+          textColor: '#333333',
+          position: 'bottom-right'
+        },
+        options: {
+          autoOpen: false,
+          showPoweredBy: true,
+          enableSounds: true,
+          enableTyping: true
+        }
+      };
+    </script>
+    <script src="http://localhost:3001/widget.js" async></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+name: voxo_chat_example
+description: "Démonstration du SDK VOXO Chat pour Flutter."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Le SDK est consommé par chemin : c'est cette dépendance-là que l'exemple
+  # sert à éprouver. Une application cliente pointerait vers le dépôt Git.
+  voxo_chat:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

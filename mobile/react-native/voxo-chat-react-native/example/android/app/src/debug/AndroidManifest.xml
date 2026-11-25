@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Uniquement en debug : un backend VOXO lancé en local est servi en HTTP
+         simple, qu'Android bloque par défaut depuis Android 9. En production,
+         l'API est en HTTPS et cet attribut n'a pas lieu d'être. -->
+    <application
+        android:usesCleartextTraffic="true"
+        tools:targetApi="28"
+        tools:replace="android:usesCleartextTraffic" />
+</manifest>

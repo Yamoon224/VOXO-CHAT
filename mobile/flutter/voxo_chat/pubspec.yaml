@@ -1,0 +1,44 @@
+name: voxo_chat
+description: "SDK d'intégration VOXO Chat pour Flutter : assistant conversationnel embarquable, avec reprise humaine, pièces jointes et notation."
+publish_to: none # licence propriétaire : pas de publication sur pub.dev
+version: 0.2.0
+homepage: https://github.com/guijo225/voxo-chat
+repository: https://github.com/guijo225/voxo-chat
+issue_tracker: https://github.com/guijo225/voxo-chat/issues
+documentation: https://github.com/guijo225/voxo-chat/blob/main/mobile/flutter/voxo_chat/README.md
+
+topics:
+  - chat
+  - chatbot
+  - support
+  - widget
+
+environment:
+  sdk: ^3.11.5
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Client REST. Voir mobile/CONTRACT.md pour les endpoints consommés.
+  http: ^1.6.0
+  # Flux temps réel descendant (messages d'agent, statut de reprise humaine).
+  web_socket_channel: ^3.0.3
+  # Persistance de session : clés session-/user-profile-/conversation-history-.
+  shared_preferences: ^2.5.5
+  # Sélection de pièces jointes (images et documents dans le même sélecteur).
+  file_picker: ^12.0.0
+  # Compression des images avant envoi, parité avec shared/file-rules.mjs.
+  flutter_image_compress: ^2.5.1
+  # Répertoire temporaire où déposer l'image compressée.
+  path_provider: ^2.1.6
+  # Ouverture des liens contenus dans les réponses, après filtrage des schémas.
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  stream_channel: ^2.1.4
+
+flutter:

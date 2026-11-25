@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Mon site</title></head><body>
+<!-- Servez ce fichier via HTTP(S) ; ne l'ouvrez pas directement en file://. -->
+<script>
+window.ChatBotConfig = {
+  "apiUrl": "http://localhost:3001/api",
+  "tenantId": "4403c33e-1294-4017-b9a2-b628ac4f5291",
+  "name": "Assistant Neo bureau",
+  "welcomeMessage": "Bonjour ! Je suis l'assistant virtuel de Neo bureau. Comment puis-je vous aider ?",
+  "theme": {
+    "primaryColor": "#3b82f6",
+    "textColor": "#333333",
+    "position": "bottom-right"
+  },
+  "options": {
+    "showPoweredBy": true
+  }
+};
+</script>
+<script src="http://localhost:3001/widget.js" data-api-url="http://localhost:3001/api" data-tenant-id="4403c33e-1294-4017-b9a2-b628ac4f5291" async></script>
+</body></html>

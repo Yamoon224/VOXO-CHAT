@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Widget ChatBot VOXO</title>
+    <link rel="stylesheet" href="./dev-styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 VOXO ChatBot Widget</h1>
+            <p>Testez notre widget de chatbot intelligent avec Claude AI</p>
+        </div>
+        
+        <div class="content">
+            <div id="widget-status" class="status offline">
+                <div class="status-dot"></div>
+                <span>Widget non chargé</span>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🎯 Intelligence Artificielle</h3>
+                    <p>Propulsé par Claude AI d'Anthropic, le chatbot comprend et répond intelligemment aux questions des utilisateurs en français.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🎨 Personnalisation Complète</h3>
+                    <p>Interface entièrement personnalisable : couleurs, position, messages d'accueil, et bien plus encore.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📱 Responsive Design</h3>
+                    <p>Fonctionne parfaitement sur desktop, tablette et mobile avec des animations fluides.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>⚡ Performances Optimales</h3>
+                    <p>Chargement rapide, rate limiting, gestion d'erreurs et sauvegarde automatique des conversations.</p>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <h3>🎮 Contrôles du Widget</h3>
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="openWidget()">💬 Ouvrir le Chat</button>
+                    <button class="btn btn-secondary" onclick="closeWidget()">❌ Fermer le Chat</button>
+                    <button class="btn btn-secondary" onclick="sendTestMessage()">✉️ Envoyer un Message Test</button>
+                    <button class="btn btn-secondary" onclick="clearMessages()">🗑️ Vider les Messages</button>
+                    <button class="btn btn-secondary" onclick="showStats()">📊 Afficher les Stats</button>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h4>📋 Comment tester le widget :</h4>
+                <ul>
+                    <li><strong>Cliquez sur l'icône du chatbot</strong> en bas à droite pour ouvrir la conversation</li>
+                    <li><strong>Tapez vos questions</strong> et testez l'intelligence artificielle Claude</li>
+                    <li><strong>Testez les suggestions</strong> qui apparaissent sous les réponses du bot</li>
+                    <li><strong>Essayez différentes questions</strong> : support, tarification, fonctionnalités, etc.</li>
+                    <li><strong>Testez sur mobile</strong> : redimensionnez votre navigateur</li>
+                    <li><strong>Utilisez les boutons de contrôle</strong> ci-dessus pour tester l'API JavaScript</li>
+                </ul>
+            </div>
+            
+            <div class="config-display">
+                <strong>Configuration actuelle du widget :</strong><br>
+                <div id="config-content">Chargement...</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>💫 VOXO ChatBot SaaS - Propulsé par Claude AI</p>
+            <p>🔧 Widget version 1.0.0 - En cours de test</p>
+        </div>
+    </div>
+
+    <!-- Scripts de test -->
+    <script src="./dev-script.js"></script>
+
+    <!-- Chargement du widget depuis le serveur local -->
+    <script src="http://127.0.0.1:8080/widget.js" async></script>
+</body>
+</html>

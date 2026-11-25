@@ -1,0 +1,118 @@
+1. Analyse du problème
+a) Origine de l’erreur
+
+    Erreur côté backend :
+    Code
+
+Error: "sessionId" must be a valid GUID
+at /home/wilfried/VOXO-APK/VOXO/backend/src/middleware/validationMiddleware.js:18:19
+
+→ Le middleware de validation du backend attend que le champ sessionId dans la requête POST /api/chat/message soit un GUID (UUID) valide.
+
+Erreur côté frontend (navigateur) :
+Code
+
+    Erreur API sendMessage: Error: "sessionId" must be a valid GUID
+
+    → Le widget du chatbot envoie un sessionId qui n’est pas au format GUID ou qui est absent.
+
+2. Pourquoi ce problème ?
+
+    Le frontend (widget ou page) n’assigne pas correctement un sessionId valide (UUID) lors de l’ouverture ou de l’envoi de messages.
+    Le backend bloque toute requête avec un sessionId absent ou malformé (par sécurité et gestion des sessions).
+
+3. Comment résoudre ce problème ?
+A. Vérifier la génération et l’envoi du sessionId côté frontend
+a) Où regarder ?
+
+    Dans le code JavaScript du widget/chatbot, cherche où est généré ou récupéré le sessionId.
+    Typiquement, cela ressemble à :
+    js
+
+    const sessionId = ...; // Devrait être un UUID (ex : "6e246975-e0c1-404e-8318-2a29efa2d9f0")
+
+b) Que faire ?
+
+    Si le sessionId est absent ou généré de façon naïve (par ex. avec Math.random()), il faut le remplacer par un vrai UUID.
+
+    Utilise une librairie pour générer un UUID v4. Exemple :
+    js
+
+import { v4 as uuidv4 } from 'uuid';
+// ou si déjà dans le navigateur :
+const sessionId = crypto.randomUUID(); // Pour navigateurs modernes
+
+Stocke le sessionId dans le localStorage pour garder la session d’un utilisateur (optionnel mais recommandé) :
+js
+
+    let sessionId = localStorage.getItem('sessionId');
+    if (!sessionId) {
+      sessionId = crypto.randomUUID();
+      localStorage.setItem('sessionId', sessionId);
+    }
+
+c) Vérifie que chaque requête POST vers /api/chat/message embarque ce sessionId dans le body :
+js
+
+fetch('/api/chat/message', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    sessionId: sessionId, // <-- doit être un GUID valide !
+    message: userMessage,
+    ...autresChamps
+  })
+})
+
+B. Vérifier le middleware de validation côté backend
+
+    Le middleware /backend/src/middleware/validationMiddleware.js bloque les sessionId non valides.
+    Il attend un format UUID, souvent vérifié avec une regex ou une fonction :
+    js
+
+    const isUuid = (s) => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(s);
+
+    Ne PAS désactiver cette vérification, elle est importante !
+    → Il faut corriger le frontend.
+
+C. Bonus : Test rapide
+
+Dans la console du navigateur, teste :
+js
+
+crypto.randomUUID();
+// ou si non supporté :
+import { v4 as uuidv4 } from 'uuid';
+uuidv4();
+
+Assure-toi que la valeur ressemble à :
+6e246975-e0c1-404e-8318-2a29efa2d9f0
+4. Résumé - Actions à faire
+
+    Frontend : Générer un sessionId UUID valide au chargement du chat, le stocker (localStorage), et l’envoyer dans chaque requête d’envoi de message.
+    Backend : Rien à changer si la vérification UUID est correcte.
+    Test : Ouvre le chat, vérifie avec les outils de développement réseau que le body POST contient un sessionId UUID.
+    → L’erreur doit disparaître et le chatbot doit répondre normalement.
+
+5. Exemple de code correct (frontend)
+JavaScript
+
+let sessionId = localStorage.getItem('sessionId');
+if (!sessionId) {
+  sessionId = crypto.randomUUID();
+  localStorage.setItem('sessionId', sessionId);
+}
+
+// Puis lors de l’envoi du message :
+fetch('/api/chat/message', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ sessionId, message: userMessage })
+});
+
+6. Conclusion
+
+    Problème : Le chatbot n’envoie pas un sessionId UUID valide au backend.
+    Solution : Génère et utilise un vrai UUID comme sessionId côté frontend.
+
+Corrige cela dans le JS du widget/chatbot, et tout va fonctionner !

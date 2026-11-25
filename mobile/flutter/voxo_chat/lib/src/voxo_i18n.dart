@@ -1,0 +1,133 @@
+abstract final class VoxoI18n {
+  static const Map<String, Map<String, String>> _copy = {
+    'fr': {
+      'openChat': 'Ouvrir le chat', 'close': 'Fermer', 'ratingTitle': 'Comment s’est passé cet échange ?',
+      'ratingGroup': 'Note de 1 à 5', 'ratingRequired': 'Choisissez une note entre 1 et 5.',
+      'ratingValue': '{count} sur 5', 'ratingComment': 'Un commentaire ? (facultatif)',
+      'cancel': 'Annuler', 'send': 'Envoyer', 'today': 'Aujourd’hui', 'yesterday': 'Hier',
+      'network': 'Impossible de se connecter au serveur. Vérifiez votre connexion internet.',
+      'timeout': 'Le serveur met trop de temps à répondre.', 'malformed': 'Réponse inattendue du serveur.',
+      'ratingThanks': 'Merci, votre avis a bien été envoyé.',
+      'invalidTenant': 'Identifiant de chatbot invalide : un UUID est attendu.', 'invalidApiUrl': 'L’adresse du serveur VOXO est invalide.',
+      'rateLimited': 'Trop de messages envoyés. Veuillez patienter avant de continuer.', 'notFound': 'Ressource introuvable.',
+      'unavailable': 'Le service est momentanément indisponible. Réessayez dans quelques instants.', 'genericError': 'Une erreur est survenue.',
+      // Clés additionnelles Flutter (au-delà des 22 partagées avec RN/widget) :
+      // indicateur de frappe, en-tête, composeur, pièces jointes, reprise
+      // humaine, inactivité — voir mobile/CONTRACT.md pour l'équivalent web.
+      'typingLabel': 'L’assistant rédige sa réponse',
+      'endAndRateTooltip': 'Terminer et noter la conversation',
+      'newConversationTooltip': 'Nouvelle conversation',
+      'closeChatTooltip': 'Fermer le chat',
+      'languageLabel': 'Langue',
+      'assistantOnlyStatus': 'Assistant IA',
+      'assistantAvailable': 'Assistant disponible',
+      'serviceUnavailable': 'Service indisponible',
+      'connectingStatus': 'Connexion…',
+      'composerHint': 'Écrivez votre message…',
+      'sendMessageLabel': 'Envoyer le message',
+      'attachFileTooltip': 'Joindre un fichier',
+      'attachLimitReached': 'Limite de {count} fichiers atteinte',
+      'uploadingLabel': 'Envoi en cours…',
+      'removeAttachment': 'Retirer {name}',
+      'feedbackUseful': 'Réponse utile',
+      'feedbackNotUseful': 'Réponse inutile',
+      'messageFailed': 'Non envoyé',
+      'retryLabel': 'Réessayer',
+      'maxAttachmentsError': 'Vous pouvez joindre au maximum {count} fichiers.',
+      'remainingSlotsError': 'Seuls {count} fichier(s) supplémentaires peuvent être joints.',
+      'filePickerUnavailable': 'Impossible d’ouvrir le sélecteur de fichiers. Vérifiez les autorisations de l’application.',
+      'linkOpenFailed': 'Ce lien ne peut pas être ouvert.',
+      'fileUnreadable': 'Ce fichier est illisible.',
+      'fileEmpty': 'Le fichier est vide.',
+      'unsupportedFormat': 'Format non pris en charge. Formats acceptés : {list}.',
+      'fileTooLarge': 'Fichier trop volumineux ({size}). La taille maximale est de {max}.',
+      'messageTooLong': 'Message trop long ({max} caractères maximum).',
+      'tooManyMessages': 'Vous envoyez trop de messages. Patientez quelques instants.',
+      'inactivityReminder': 'Bonjour, souhaitez-vous poursuivre notre échange ? Je reste à votre disposition.',
+      'inactivityClosing': 'Sans réponse de votre part, cette conversation est maintenant clôturée. Vous pourrez démarrer une nouvelle conversation à tout moment.',
+      'autoCloseFailed': 'La clôture automatique a échoué. Veuillez réessayer.',
+      'defaultWelcome': 'Bonjour ! Comment puis-je vous aider ?',
+      'feedbackSaveFailed': 'Votre avis n’a pas pu être enregistré.',
+      'attachmentStillUploading': 'Un fichier est encore en cours d’envoi.',
+      'handoffWithAgent': 'Vous échangez avec {agent}',
+      'handoffDefaultAgent': 'un conseiller',
+      'handoffWaiting': 'Un conseiller a été prévenu',
+      'historyTitle': 'Historique des conversations',
+      'historyTooltip': 'Historique',
+      'noHistory': 'Aucune conversation précédente.',
+      'historyUnavailable': 'Historique indisponible',
+      'backLabel': 'Retour',
+    },
+    'en': {
+      'openChat': 'Open chat', 'close': 'Close', 'ratingTitle': 'How did the conversation go?',
+      'ratingGroup': 'Rating from 1 to 5', 'ratingRequired': 'Choose a rating between 1 and 5.',
+      'ratingValue': '{count} out of 5', 'ratingComment': 'Optional comment',
+      'cancel': 'Cancel', 'send': 'Send', 'today': 'Today', 'yesterday': 'Yesterday',
+      'network': 'Unable to connect to the server. Check your internet connection.',
+      'timeout': 'The server is taking too long to respond.', 'malformed': 'Unexpected server response.',
+      'ratingThanks': 'Thank you, your feedback was sent.',
+      'invalidTenant': 'Invalid chatbot identifier: a UUID is required.', 'invalidApiUrl': 'The VOXO server address is invalid.',
+      'rateLimited': 'Too many messages sent. Please wait before continuing.', 'notFound': 'Resource not found.',
+      'unavailable': 'The service is temporarily unavailable. Please try again shortly.', 'genericError': 'An error occurred.',
+      'typingLabel': 'The assistant is typing a reply',
+      'endAndRateTooltip': 'End and rate the conversation',
+      'newConversationTooltip': 'New conversation',
+      'closeChatTooltip': 'Close chat',
+      'languageLabel': 'Language',
+      'assistantOnlyStatus': 'AI assistant',
+      'assistantAvailable': 'Assistant available',
+      'serviceUnavailable': 'Service unavailable',
+      'connectingStatus': 'Connecting…',
+      'composerHint': 'Write your message…',
+      'sendMessageLabel': 'Send message',
+      'attachFileTooltip': 'Attach a file',
+      'attachLimitReached': 'Limit of {count} files reached',
+      'uploadingLabel': 'Uploading…',
+      'removeAttachment': 'Remove {name}',
+      'feedbackUseful': 'Helpful reply',
+      'feedbackNotUseful': 'Unhelpful reply',
+      'messageFailed': 'Not sent',
+      'retryLabel': 'Retry',
+      'maxAttachmentsError': 'You can attach up to {count} files.',
+      'remainingSlotsError': 'Only {count} more file(s) can be attached.',
+      'filePickerUnavailable': 'Unable to open the file picker. Check the app permissions.',
+      'linkOpenFailed': 'This link cannot be opened.',
+      'fileUnreadable': 'This file cannot be read.',
+      'fileEmpty': 'The file is empty.',
+      'unsupportedFormat': 'Unsupported format. Accepted formats: {list}.',
+      'fileTooLarge': 'File too large ({size}). The maximum size is {max}.',
+      'messageTooLong': 'Message too long ({max} characters maximum).',
+      'tooManyMessages': 'You are sending too many messages. Please wait a moment.',
+      'inactivityReminder': 'Hi, would you like to continue our conversation? I’m still here if you need me.',
+      'inactivityClosing': 'Since there was no reply, this conversation is now closed. You can start a new conversation anytime.',
+      'autoCloseFailed': 'Automatic closing failed. Please try again.',
+      'defaultWelcome': 'Hello! How can I help you?',
+      'feedbackSaveFailed': 'Your feedback could not be saved.',
+      'attachmentStillUploading': 'A file is still being uploaded.',
+      'handoffWithAgent': 'You are chatting with {agent}',
+      'handoffDefaultAgent': 'an agent',
+      'handoffWaiting': 'An agent has been notified',
+      'historyTitle': 'Conversation history',
+      'historyTooltip': 'History',
+      'noHistory': 'No previous conversations.',
+      'historyUnavailable': 'History unavailable',
+      'backLabel': 'Back',
+    },
+  };
+
+  static String normalize(String? locale) => locale?.toLowerCase() == 'en' ? 'en' : 'fr';
+
+  static String text(String locale, String key, [Map<String, Object> values = const {}]) {
+    var result = _copy[normalize(locale)]?[key] ?? _copy['fr']?[key] ?? key;
+    for (final entry in values.entries) {
+      result = result.replaceAll('{${entry.key}}', entry.value.toString());
+    }
+    return result;
+  }
+
+  static bool get catalogsHaveParity {
+    final fr = _copy['fr']!.keys.toSet();
+    final en = _copy['en']!.keys.toSet();
+    return fr.length == en.length && fr.containsAll(en);
+  }
+}

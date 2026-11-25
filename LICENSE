@@ -1,0 +1,25 @@
+VOXO Chat — Licence propriétaire
+Copyright (c) 2026 [TITULAIRE DES DROITS : nom de la société ou de la personne]. Tous droits réservés.
+
+Ce logiciel et sa documentation (le « Logiciel ») sont la propriété exclusive du
+titulaire ci-dessus. Aucune licence ouverte n'est accordée.
+
+1. Usage. Le Logiciel peut être utilisé uniquement par les clients de VOXO Chat et
+   dans le cadre de leur contrat avec le titulaire, pour intégrer le service VOXO
+   Chat dans leurs propres sites et applications.
+
+2. Restrictions. Sauf autorisation écrite préalable du titulaire, il est interdit
+   de copier, modifier, redistribuer, sous-licencier, vendre ou publier le
+   Logiciel ou une partie de celui-ci, notamment sur un registre public de paquets
+   (pub.dev, npm, Maven Central, CocoaPods, Swift Package Index…).
+
+3. Composants tiers. Les dépendances tierces restent soumises à leurs propres
+   licences, qui prévalent pour ces composants.
+
+4. Absence de garantie. Le Logiciel est fourni « en l'état », sans garantie
+   d'aucune sorte, dans la limite permise par la loi applicable.
+
+Pour toute autorisation particulière, contactez le titulaire.
+
+— Texte rédigé comme point de départ : à faire relire par un juriste et à
+  compléter avec la dénomination exacte du titulaire avant toute diffusion.

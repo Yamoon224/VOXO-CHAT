@@ -1,0 +1,4 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Backend de démo en HTTP sur l'émulateur (10.0.2.2) : réservé au build debug, jamais en production. -->
+    <application android:usesCleartextTraffic="true" />
+</manifest>

@@ -1,0 +1,21 @@
+# Document de Test OCR
+
+Ceci est un document de test pour vérifier le bon fonctionnement
+du système d'extraction de texte et d'OCR.
+
+## Fonctionnalités testées
+
+1. Extraction de texte simple
+2. Reconnaissance de caractères français: àáâãäåæçèéêëìíîï
+3. Reconnaissance de chiffres: 0123456789
+4. Ponctuation et caractères spéciaux: !@#$%^&*()
+
+## Cas d'usage
+
+- Support client
+- Documentation technique
+- FAQ automatisée
+- Base de connaissances
+
+Ce document permet de tester l'extraction de texte
+et la génération automatique de tags.

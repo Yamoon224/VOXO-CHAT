@@ -1,0 +1,119 @@
+{
+  "name": "voxo-chat-react-native",
+  "version": "0.2.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "description": "SDK d'intégration VOXO Chat pour React Native : assistant conversationnel embarquable, avec reprise humaine, pièces jointes et notation.",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "files": [
+    "src",
+    "lib",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guijo225/voxo-chat.git",
+    "directory": "mobile/react-native/voxo-chat-react-native"
+  },
+  "homepage": "https://github.com/guijo225/voxo-chat/tree/main/mobile/react-native/voxo-chat-react-native",
+  "keywords": [
+    "react-native",
+    "chat",
+    "chatbot",
+    "support",
+    "voxo"
+  ],
+  "scripts": {
+    "build": "bob build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "jest",
+    "prepare": "bob build"
+  },
+  "peerDependencies": {
+    "@react-native-async-storage/async-storage": "*",
+    "@react-native-documents/picker": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-get-random-values": "*",
+    "react-native-image-picker": "*",
+    "react-native-image-resizer": "*",
+    "react-native-safe-area-context": "*"
+  },
+  "peerDependenciesMeta": {
+    "@react-native-async-storage/async-storage": {
+      "optional": true
+    },
+    "@react-native-documents/picker": {
+      "optional": true
+    },
+    "react-native-get-random-values": {
+      "optional": true
+    },
+    "react-native-image-picker": {
+      "optional": true
+    },
+    "react-native-image-resizer": {
+      "optional": true
+    },
+    "react-native-safe-area-context": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@react-native/babel-preset": "0.87.0",
+    "@testing-library/react-native": "^14.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "jest": "^30.0.0",
+    "react": "19.2.3",
+    "react-native": "0.87.0",
+    "react-native-builder-bob": "^0.43.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": [
+        "babel-jest",
+        {
+          "configFile": "./babel.config.js"
+        }
+      ]
+    },
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.test.ts",
+      "<rootDir>/__tests__/**/*.test.tsx"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ]
+  }
+}
